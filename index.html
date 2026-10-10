@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="#about" class="logo">Portfolio.</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="hero-section">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="badge">Hello, I'm a Student</span>
+                    <h1>Building things for the web, one line at a time.</h1>
+                    <p>Welcome to my simple personal portfolio. I am passionate about learning web development, building clean interfaces, and expanding my technical skills.</p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <div class="card-inner">
+                        <h3>Student Developer</h3>
+                        <p>Focusing on HTML, CSS, JavaScript, and modern responsive design practices.</p>
+                        <div class="tech-stack-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>My Skills</h2>
+                    <p>Technologies and tools I am currently learning and using.</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">💻</div>
+                        <h3>Frontend Basics</h3>
+                        <p>HTML5, CSS3, responsive layouts using Flexbox and Grid.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">⚡</div>
+                        <h3>JavaScript</h3>
+                        <p>DOM manipulation, event handling, and basic ES6+ features.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🛠️</div>
+                        <h3>Tools & Workflow</h3>
+                        <p>Git, GitHub, VS Code, and browser developer tools.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Projects</h2>
+                    <p>A few examples of my recent practice works and school projects.</p>
+                </div>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-img-placeholder">Project 1</div>
+                        <div class="project-info">
+                            <h3>Landing Page Design</h3>
+                            <p>A responsive marketing landing page built with pure HTML and CSS.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-img-placeholder">Project 2</div>
+                        <div class="project-info">
+                            <h3>Task Tracker App</h3>
+                            <p>A simple interactive todo list application using vanilla JavaScript.</p>
+                            <div class="project-tags">
+                                <span>JavaScript</span>
+                                <span>DOM</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-img-placeholder">Project 3</div>
+                        <div class="project-info">
+                            <h3>Personal Blog Template</h3>
+                            <p>A clean, text-focused blog layout optimized for readability on mobile devices.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS Grid</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Get In Touch</h2>
+                    <p>Have a question or want to work together? Send me a message!</p>
+                </div>
+                <div class="contact-wrapper">
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <small class="error-message" id="nameError"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                            <small class="error-message" id="emailError"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+                            <small class="error-message" id="messageError"></small>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                        <div id="formSuccess" class="form-success" style="display: none;">
+                            Thank you! Your message has been sent successfully.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; <span id="currentYear"></span> Student Portfolio. Built for test purposes only.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
