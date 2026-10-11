@@ -1,37 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
+    // Dynamic Footer Year
+    const yearSpan = document.getElementById('currentYear');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
 
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+    // Mobile Navigation Toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', !isExpanded);
+            navMenu.classList.toggle('active');
         });
 
-        // Close menu when clicking a nav link
-        navLinks.querySelectorAll('a').forEach(link => {
+        // Close menu when clicking navigation links on mobile
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
+                navMenu.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
             });
         });
     }
 
-    // Dynamic Footer Year
-    const currentYearSpan = document.getElementById('currentYear');
-    if (currentYearSpan) {
-        currentYearSpan.textContent = new Date().getFullYear();
-    }
-
-    // Contact Form Validation & Submission Handler
+    // Contact Form Validation and Submission
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-
+            
             const nameInput = document.getElementById('name');
             const emailInput = document.getElementById('email');
             const messageInput = document.getElementById('message');
-
+            
             const nameError = document.getElementById('nameError');
             const emailError = document.getElementById('emailError');
             const messageError = document.getElementById('messageError');
@@ -41,48 +45,40 @@ document.addEventListener('DOMContentLoaded', () => {
             nameError.textContent = '';
             emailError.textContent = '';
             messageError.textContent = '';
-            nameInput.classList.remove('error');
-            emailInput.classList.remove('error');
-            messageInput.classList.remove('error');
-            formSuccess.style.display = 'none';
+            formSuccess.classList.add('hidden');
 
             let isValid = true;
 
-            // Validate Name
             if (!nameInput.value.trim()) {
                 nameError.textContent = 'Please enter your name.';
-                nameInput.classList.add('error');
                 isValid = false;
             }
 
-            // Validate Email
-            const emailVal = emailInput.value.trim();
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailVal) {
+            if (!emailInput.value.trim()) {
                 emailError.textContent = 'Please enter your email address.';
-                emailInput.classList.add('error');
                 isValid = false;
-            } else if (!emailRegex.test(emailVal)) {
+            } else if (!emailRegex.test(emailInput.value.trim())) {
                 emailError.textContent = 'Please enter a valid email address.';
-                emailInput.classList.add('error');
                 isValid = false;
             }
 
-            // Validate Message
             if (!messageInput.value.trim()) {
-                messageError.textContent = 'Please type a message.';
-                messageInput.classList.add('error');
+                messageError.textContent = 'Please write a message.';
+                isValid = false;
+            } else if (messageInput.value.trim().length < 10) {
+                messageError.textContent = 'Message must be at least 10 characters long.';
                 isValid = false;
             }
 
-            // If valid, show success message and clear form
             if (isValid) {
-                formSuccess.style.display = 'block';
+                // Simulate successful form processing
+                formSuccess.classList.remove('hidden');
                 contactForm.reset();
-
+                
                 // Hide success message after 5 seconds
                 setTimeout(() => {
-                    formSuccess.style.display = 'none';
+                    formSuccess.classList.add('hidden');
                 }, 5000);
             }
         });
