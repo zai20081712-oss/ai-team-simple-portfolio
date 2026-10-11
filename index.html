@@ -3,51 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Student Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="nav-container">
-            <a href="#about" class="logo">Portfolio.</a>
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="#about" class="logo">Portfolio<span>.</span></a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
             </button>
-            <nav class="nav-links" id="navLinks">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
     <main>
         <section id="about" class="hero-section">
-            <div class="container hero-content">
-                <div class="hero-text">
-                    <span class="badge">Hello, I'm a Student</span>
-                    <h1>Building things for the web, one line at a time.</h1>
-                    <p>Welcome to my simple personal portfolio. I am passionate about learning web development, building clean interfaces, and expanding my technical skills.</p>
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="badge">Hello, I'm a Student Developer</span>
+                    <h1>Building things for the web with passion & curiosity.</h1>
+                    <p>I am an IT student focused on learning modern web development technologies. Welcome to my simple portfolio showcasing my academic and personal projects.</p>
                     <div class="hero-actions">
                         <a href="#projects" class="btn btn-primary">View Projects</a>
-                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                        <a href="#contact" class="btn btn-outline">Get in Touch</a>
                     </div>
                 </div>
-                <div class="hero-card">
-                    <div class="card-inner">
-                        <h3>Student Developer</h3>
-                        <p>Focusing on HTML, CSS, JavaScript, and modern responsive design practices.</p>
-                        <div class="tech-stack-tags">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
-                        </div>
+                <div class="hero-image-wrapper">
+                    <div class="avatar-placeholder">
+                        <span>SP</span>
                     </div>
                 </div>
             </div>
@@ -57,23 +51,35 @@
             <div class="container">
                 <div class="section-header">
                     <h2>My Skills</h2>
-                    <p>Technologies and tools I am currently learning and using.</p>
+                    <p>Technologies and tools I've been learning and using</p>
                 </div>
                 <div class="skills-grid">
                     <div class="skill-card">
-                        <div class="skill-icon">💻</div>
-                        <h3>Frontend Basics</h3>
-                        <p>HTML5, CSS3, responsive layouts using Flexbox and Grid.</p>
+                        <h3>Frontend</h3>
+                        <ul>
+                            <li>HTML5 & CSS3</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>Responsive Design</li>
+                            <li>DOM Manipulation</li>
+                        </ul>
                     </div>
                     <div class="skill-card">
-                        <div class="skill-icon">⚡</div>
-                        <h3>JavaScript</h3>
-                        <p>DOM manipulation, event handling, and basic ES6+ features.</p>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">🛠️</div>
                         <h3>Tools & Workflow</h3>
-                        <p>Git, GitHub, VS Code, and browser developer tools.</p>
+                        <ul>
+                            <li>Git & GitHub</li>
+                            <li>VS Code</li>
+                            <li>Chrome DevTools</li>
+                            <li>Command Line</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Basics & Others</h3>
+                        <ul>
+                            <li>Python Basics</li>
+                            <li>SQL / Databases</li>
+                            <li>UI/UX Wireframing</li>
+                            <li>Problem Solving</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -83,40 +89,45 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Featured Projects</h2>
-                    <p>A few examples of my recent practice works and school projects.</p>
+                    <p>Some of the simple apps and layouts I built during my studies</p>
                 </div>
                 <div class="projects-grid">
                     <article class="project-card">
                         <div class="project-img-placeholder">Project 1</div>
                         <div class="project-info">
-                            <h3>Landing Page Design</h3>
-                            <p>A responsive marketing landing page built with pure HTML and CSS.</p>
+                            <h3>Task Manager App</h3>
+                            <p>A simple vanilla JavaScript application to organize daily student tasks and track completed assignments.</p>
                             <div class="project-tags">
                                 <span>HTML</span>
                                 <span>CSS</span>
+                                <span>JavaScript</span>
                             </div>
+                            <a href="#projects" class="project-link">View Source &rarr;</a>
                         </div>
                     </article>
                     <article class="project-card">
                         <div class="project-img-placeholder">Project 2</div>
                         <div class="project-info">
-                            <h3>Task Tracker App</h3>
-                            <p>A simple interactive todo list application using vanilla JavaScript.</p>
+                            <h3>Weather Dashboard UI</h3>
+                            <p>A responsive layout fetching live weather mock data to display forecasts cleanly across multiple screen sizes.</p>
                             <div class="project-tags">
-                                <span>JavaScript</span>
-                                <span>DOM</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>API</span>
                             </div>
+                            <a href="#projects" class="project-link">View Source &rarr;</a>
                         </div>
                     </article>
                     <article class="project-card">
                         <div class="project-img-placeholder">Project 3</div>
                         <div class="project-info">
-                            <h3>Personal Blog Template</h3>
-                            <p>A clean, text-focused blog layout optimized for readability on mobile devices.</p>
+                            <h3>Personal Blog Layout</h3>
+                            <p>A clean, typography-focused semantic HTML and CSS grid layout for a student writer's portfolio.</p>
                             <div class="project-tags">
-                                <span>HTML</span>
+                                <span>HTML5</span>
                                 <span>CSS Grid</span>
                             </div>
+                            <a href="#projects" class="project-link">View Source &rarr;</a>
                         </div>
                     </article>
                 </div>
@@ -126,39 +137,37 @@
         <section id="contact" class="contact-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Get In Touch</h2>
+                    <h2>Contact Me</h2>
                     <p>Have a question or want to work together? Send me a message!</p>
                 </div>
                 <div class="contact-wrapper">
                     <form id="contactForm" class="contact-form" novalidate>
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                            <small class="error-message" id="nameError"></small>
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Juan Dela Cruz" required>
+                            <span class="error-message" id="nameError"></span>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-                            <small class="error-message" id="emailError"></small>
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="juan@example.com" required>
+                            <span class="error-message" id="emailError"></span>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
-                            <small class="error-message" id="messageError"></small>
+                            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                            <span class="error-message" id="messageError"></span>
                         </div>
                         <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-                        <div id="formSuccess" class="form-success" style="display: none;">
-                            Thank you! Your message has been sent successfully.
-                        </div>
+                        <div id="formSuccess" class="form-success hidden">Thank you! Your message has been sent successfully.</div>
                     </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container footer-content">
-            <p>&copy; <span id="currentYear"></span> Student Portfolio. Built for test purposes only.</p>
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <p>&copy; <span id="currentYear"></span> Student Portfolio. Built with vanilla HTML, CSS, and JS.</p>
         </div>
     </footer>
 
